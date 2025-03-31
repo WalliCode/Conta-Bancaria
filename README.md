@@ -185,8 +185,145 @@ Esse foi meu primeiro programa **100% funcional** em Java! 🎉
 ✔️ Tratar erros com `try-catch`  
 ✔️ Exibir mensagens formatadas no terminal  
 
-Agora que entendi esses conceitos básicos, posso expandir esse projeto adicionando **depósitos, saques e transferências**. Quem sabe no futuro eu crio até uma interface gráfica para ele? 🤯  
+---
+#`ContaTerminalScanner.java` 🖨️  
 
-Se você está começando em Java, recomendo praticar bastante esses conceitos. Bora codar! 💻🔥  
+Fala, galera! 👋 Continuando meus estudos em **Java**, agora fiz uma versão melhorada do sistema bancário, usando **entrada pelo teclado** com `Scanner`. 📟  
 
-O que achou do meu primeiro programa? Alguma sugestão? 😊
+Neste programa, o usuário insere os dados da conta diretamente pelo **terminal** em vez de passar argumentos na linha de comando. Isso torna a experiência mais interativa! 😃  
+
+Bora entender o código? 🚀  
+
+---
+
+## 📝 Estrutura do Código  
+
+Dessa vez, criei a **classe `ContaTerminalScanner`**, que também possui apenas o método `main`. A principal diferença é que usamos a classe `Scanner` para capturar os dados diretamente do usuário.  
+
+---
+
+## 🔍 Explicação Passo a Passo  
+
+### 1️⃣ Importando a Classe `Scanner`  
+
+```java
+import java.util.Scanner;
+```
+
+📌 **O que isso faz?**  
+- Importa a classe `Scanner`, que permite ler entradas do teclado.  
+
+---
+
+### 2️⃣ Criando o Scanner e Capturando Dados  
+
+```java
+Scanner scanner = new Scanner(System.in);
+```
+
+📌 **Aqui, criamos um objeto `Scanner`** para capturar a entrada do usuário.  
+
+Depois, solicitamos os dados um por um:  
+
+```java
+System.out.println("Digite o número da conta:");
+int numero = scanner.nextInt();
+scanner.nextLine(); // Consumir a quebra de linha pendente
+```
+
+💡 **Por que `scanner.nextLine();` depois de `nextInt()`?**  
+- Quando usamos `nextInt()`, ele **não consome** a quebra de linha `\n` pressionada após o número.  
+- Isso poderia causar problemas ao ler a agência com `nextLine()`.  
+
+Agora, capturamos os outros dados:  
+
+```java
+System.out.println("Digite o número da agência:");
+String agencia = scanner.nextLine();
+
+System.out.println("Digite seu nome:");
+String nomeCliente = scanner.nextLine();
+
+System.out.println("Digite o saldo inicial:");
+double saldo = scanner.nextDouble();
+```
+
+📌 **Dessa forma, garantimos que todos os dados são capturados corretamente!**  
+
+---
+
+### 3️⃣ Exibindo os Dados  
+
+```java
+System.out.println("\n=== DADOS DA CONTA ===");
+System.out.println("Número da conta: " + numero);
+System.out.println("Agência: " + agencia);
+System.out.println("Nome do cliente: " + nomeCliente);
+System.out.printf("Saldo: R$ %.2f\n", saldo);
+```
+
+📌 **Formatamos o saldo para duas casas decimais**, garantindo uma saída mais organizada.  
+
+---
+
+### 4️⃣ Mensagem Personalizada  
+
+```java
+System.out.printf("\nOlá %s, obrigado por criar uma conta em nosso banco!\n" +
+                  "Sua agência é %s, conta %d e seu saldo R$ %.2f já está disponível para saque.\n",
+                  nomeCliente, agencia, numero, saldo);
+```
+
+📌 **O que fizemos aqui?**  
+- Criamos uma **mensagem amigável**, incluindo os dados da conta.  
+- **`printf`** foi usado para formatar a string com placeholders:  
+  - `%s` → String  
+  - `%d` → Inteiro  
+  - `%.2f` → Decimal com 2 casas  
+
+---
+
+### 5️⃣ Fechando o Scanner  
+
+```java
+scanner.close();
+```
+
+💡 **Isso é importante!** Sempre que usamos `Scanner`, é bom fechar o recurso para evitar desperdício de memória.  
+
+---
+
+## 🚀 Testando o Programa  
+
+🖥 **Exemplo de execução:**  
+
+```
+Digite o número da conta:
+1234
+Digite o número da agência:
+567-8
+Digite seu nome:
+João Silva
+Digite o saldo inicial:
+2500.50
+
+=== DADOS DA CONTA ===
+Número da conta: 1234
+Agência: 567-8
+Nome do cliente: João Silva
+Saldo: R$ 2500.50
+
+Olá João Silva, obrigado por criar uma conta em nosso banco!
+Sua agência é 567-8, conta 1234 e seu saldo R$ 2500.50 já está disponível para saque.
+```
+
+---
+
+## 🎯 Conclusão  
+
+Agora meu programa está **mais interativo** e **fácil de usar**! 🎉  
+
+✅ Aprendi a:  
+✔️ Capturar entrada do usuário com `Scanner`  
+✔️ Tratar problemas de leitura (`nextInt()` + `nextLine()`)  
+✔️ Exibir dados formatados no terminal  
