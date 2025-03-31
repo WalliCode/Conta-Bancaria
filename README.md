@@ -1,12 +1,10 @@
-
-```md
 # Meu Primeiro Programa em Java: `ContaTerminal.java` 🎉  
 
-## 👋 Introdução  
-
-Estou estudando **Engenharia de Software** e esse é o meu **primeiro programa em Java**. 🚀  
+Olá, galera! 👋 Estou estudando **Engenharia de Software** e esse é o meu **primeiro programa em Java**. 🚀  
 
 Criei um simples sistema bancário no terminal, onde o usuário insere os dados da conta (número, agência, nome e saldo) como argumentos na linha de comando, e o programa exibe essas informações formatadas, além de uma mensagem de boas-vindas personalizada.  
+
+Bora entender esse código comigo? 💡  
 
 ---
 
@@ -26,10 +24,8 @@ public class ContaTerminal {
     public static void main(String[] args) {
 ```
 
-```md
 - **`public class ContaTerminal`** → Declara a classe principal do programa.  
 - **`public static void main(String[] args)`** → Esse é o método principal. Ele recebe um array de `String` chamado `args`, que contém os argumentos passados na linha de comando quando o programa é executado.  
-```
 
 ---
 
@@ -44,7 +40,6 @@ if (args.length < 4) {
 }
 ```
 
-```md
 📌 **O que acontece aqui?**  
 - O programa verifica se foram fornecidos pelo menos **quatro argumentos**.  
 - Se faltar algum, ele exibe uma mensagem de erro com um exemplo correto de uso.  
@@ -52,7 +47,6 @@ if (args.length < 4) {
 
 ✅ **Por que isso é importante?**  
 - Evita que o programa tente acessar `args[]` e gere um erro por falta de dados.  
-```
 
 ---
 
@@ -66,7 +60,6 @@ try {
     double saldo = Double.parseDouble(args[3]);
 ```
 
-```md
 📌 **O que está acontecendo?**  
 - **`Integer.parseInt(args[0])`** → Converte o primeiro argumento (`args[0]`) para **inteiro** (`int`), que será o **número da conta**.  
 - **`String agencia = args[1];`** → Mantém o segundo argumento como **String**, pois pode conter hífen (exemplo: `"567-8"`).  
@@ -75,7 +68,6 @@ try {
 
 💡 **Por que usar `try`?**  
 Caso o usuário insira um valor inválido para o **número da conta** ou **saldo**, o programa evita um erro fatal e trata isso de forma amigável.  
-```
 
 ---
 
@@ -89,11 +81,9 @@ System.out.println("Nome do cliente: " + nomeCliente);
 System.out.printf("Saldo: R$ %.2f\n", saldo);
 ```
 
-```md
 📌 **Aqui, formatamos a saída de forma amigável**:  
 - `System.out.println()` exibe mensagens no terminal.  
 - `System.out.printf("Saldo: R$ %.2f\n", saldo);` → Formata o saldo para **duas casas decimais**, garantindo um visual melhor.  
-```
 
 ---
 
@@ -105,7 +95,6 @@ System.out.printf("\nOlá %s, obrigado por criar uma conta em nosso banco!\n" +
         nomeCliente, agencia, numero, saldo);
 ```
 
-```md
 📌 **Detalhes importantes**:  
 - `printf` permite formatar strings de forma dinâmica.  
 - **Placeholders usados:**  
@@ -114,7 +103,6 @@ System.out.printf("\nOlá %s, obrigado por criar uma conta em nosso banco!\n" +
   - `%.2f` → Substituído por um **número decimal com duas casas** (`saldo`).  
 
 💡 **Isso deixa a saída mais bonita e profissional!**  
-```
 
 ---
 
@@ -127,11 +115,9 @@ System.out.printf("\nOlá %s, obrigado por criar uma conta em nosso banco!\n" +
 }
 ```
 
-```md
 📌 **Por que isso é importante?**  
 - Se o usuário digitar algo errado (ex: "ABC" no lugar do saldo), o programa captura a exceção **`NumberFormatException`** e exibe uma mensagem explicativa.  
 - Isso evita que o programa quebre de forma inesperada.  
-```
 
 ---
 
@@ -143,7 +129,6 @@ System.out.printf("\nOlá %s, obrigado por criar uma conta em nosso banco!\n" +
 java ContaTerminal 1234 567-8 "João Silva" 2500.50
 ```
 
-```md
 🖥 **Saída no Terminal:**
 
 ```
@@ -156,7 +141,6 @@ Saldo: R$ 2500.50
 Olá João Silva, obrigado por criar uma conta em nosso banco!
 Sua agência é 567-8, conta 1234 e seu saldo R$ 2500.50 já está disponível para saque.
 ```
-```
 
 ---
 
@@ -166,14 +150,12 @@ Sua agência é 567-8, conta 1234 e seu saldo R$ 2500.50 já está disponível p
 java ContaTerminal 1234 567-8
 ```
 
-```md
 🖥 **Saída no Terminal:**
 
 ```
 Erro: Argumentos insuficientes!
 Uso correto: java ContaTerminal <numero> <agencia> <nomeCliente> <saldo>
 Exemplo: java ContaTerminal 1234 567-8 "Fulano da Silva" 1500.75
-```
 ```
 
 ---
@@ -184,20 +166,17 @@ Exemplo: java ContaTerminal 1234 567-8 "Fulano da Silva" 1500.75
 java ContaTerminal 1234 567-8 "João Silva" ABC
 ```
 
-```md
 🖥 **Saída no Terminal:**
 
 ```
 Erro: Formato inválido para número ou saldo!
 Certifique-se que o número é inteiro e o saldo é numérico (ex: 1500.75)
 ```
-```
 
 ---
 
 ## 🎯 Conclusão  
 
-```md
 Esse foi meu primeiro programa **100% funcional** em Java! 🎉  
 
 ✅ Aprendi a:  
@@ -211,5 +190,3 @@ Agora que entendi esses conceitos básicos, posso expandir esse projeto adiciona
 Se você está começando em Java, recomendo praticar bastante esses conceitos. Bora codar! 💻🔥  
 
 O que achou do meu primeiro programa? Alguma sugestão? 😊
-```
-```
