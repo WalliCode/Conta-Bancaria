@@ -186,7 +186,7 @@ Esse foi meu primeiro programa **100% funcional** em Java! 🎉
 ✔️ Exibir mensagens formatadas no terminal  
 
 ---
-#`ContaTerminalScanner.java` 🖨️  
+# `ContaTerminalScanner.java` 🖨️  
 
 Fala, galera! 👋 Continuando meus estudos em **Java**, agora fiz uma versão melhorada do sistema bancário, usando **entrada pelo teclado** com `Scanner`. 📟  
 
